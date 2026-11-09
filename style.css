@@ -1,0 +1,12 @@
+/* Efeitos e animações customizadas */
+.glow-effect {
+    box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.25);
+}
+.glow-effect:hover {
+    box-shadow: 0 0 35px 0px rgba(6, 182, 212, 0.45);
+}
+.bg-grid-pattern {
+    background-size: 30px 30px;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
