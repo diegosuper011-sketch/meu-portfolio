@@ -13,6 +13,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     
+    <!-- Link para o CSS externo -->
+    <link rel="stylesheet" href="style.css">
+
     <script>
         tailwind.config = {
             theme: {
@@ -41,20 +44,6 @@
             }
         }
     </script>
-    <style>
-        /* Efeitos e animações customizadas */
-        .glow-effect {
-            box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.25);
-        }
-        .glow-effect:hover {
-            box-shadow: 0 0 35px 0px rgba(6, 182, 212, 0.45);
-        }
-        .bg-grid-pattern {
-            background-size: 30px 30px;
-            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-        }
-    </style>
 </head>
 <body class="bg-dark-base text-slate-300 font-sans antialiased selection:bg-brand-500 selection:text-white bg-grid-pattern">
 
@@ -68,7 +57,7 @@
                     &lt;/&gt;
                 </div>
                 <div class="flex flex-col">
-                    <span class="text-slate-100 font-bold text-lg leading-tight tracking-wide group-hover:text-brand-400 transition-colors">Alex Silva</span>
+                    <span class="text-slate-100 font-bold text-lg leading-tight tracking-wide group-hover:text-brand-400 transition-colors">Diego Soares</span>
                     <span class="text-xs font-mono text-slate-400">Eng. de Software</span>
                 </div>
             </a>
@@ -117,7 +106,7 @@
                 <!-- Badge Status -->
                 <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-xs sm:text-sm font-mono font-medium">
                     <span class="w-2 h-2 rounded-full bg-brand-400 animate-pulse"></span>
-                    Estudante de Bacharelado em Engenharia de Software
+                    Estudante Engenharia de Software
                 </div>
 
                 <!-- Headline -->
@@ -148,7 +137,7 @@
                 <!-- Stats / Quick Info -->
                 <div class="pt-12 grid grid-cols-2 md:grid-cols-3 gap-6 max-w-2xl mx-auto border-t border-dark-border/60">
                     <div>
-                        <div class="text-2xl sm:text-3xl font-extrabold text-white font-mono">6º Semestre</div>
+                        <div class="text-2xl sm:text-3xl font-extrabold text-white font-mono">3º Semestre</div>
                         <div class="text-xs sm:text-sm text-slate-400">Graduação Acadêmica</div>
                     </div>
                     <div>
@@ -177,28 +166,29 @@
                             
                             <div class="relative bg-dark-card border border-dark-border rounded-2xl p-6 space-y-6">
                                 <div class="w-32 h-32 mx-auto rounded-full bg-slate-800 overflow-hidden border-2 border-brand-500/40 p-1">
-                                    <img src="https://placehold.co/300x300/0f172a/22d3ee?text=Alex+Silva" 
-                                         alt="Alex Silva" 
+                                    <img src="https://placehold.co/300x300/0f172a/22d3ee?text=Diego Soares" 
+                                         alt="Diego Soares" 
                                          class="w-full h-full rounded-full object-cover"
                                          onerror="this.src='https://placehold.co/300x300/0f172a/ffffff?text=Estudante'">
                                 </div>
                                 <div class="text-center space-y-1">
-                                    <h3 class="text-xl font-bold text-white">Alex Silva</h3>
-                                    <p class="text-sm text-brand-400 font-mono">Engenharia de Software (Bacharelado)</p>
+                                    <h3 class="text-xl font-bold text-white">Diego Soares Silva</h3>
+                                    <p class="text-sm text-brand-400 font-mono">Engenharia de Software</p>
                                 </div>
                                 
                                 <div class="space-y-3 pt-4 border-t border-dark-border text-sm">
                                     <div class="flex justify-between text-slate-400">
-                                        <span>Universidade:</span>
-                                        <span class="text-slate-200 font-medium">FIAP / Univesp</span>
+                                        <a href="https://www.anhanguera.com/">Anhanguera</a>
+                                        <a href="https://www.unopar.com.br/">Unopar</a>
+                                        <span class="text-slate-200 font-medium">Anhanguera/ UNOPAR</span>
                                     </div>
                                     <div class="flex justify-between text-slate-400">
                                         <span>Previsão de Formatura:</span>
-                                        <span class="text-slate-200 font-medium">Dez/2026</span>
+                                        <span class="text-slate-200 font-medium">Dez/2030</span>
                                     </div>
                                     <div class="flex justify-between text-slate-400">
-                                        <span>Localização:</span>
-                                        <span class="text-slate-200 font-medium">São Paulo, SP</span>
+                                        <span>Localização: Itumbiara</span>
+                                        <span class="text-slate-200 font-medium">Goiás, GO</span>
                                     </div>
                                 </div>
                             </div>
@@ -581,7 +571,7 @@
                                 </div>
                                 <div>
                                     <div class="text-xs text-slate-400 font-mono">E-mail Direto</div>
-                                    <div class="text-slate-200 font-semibold group-hover:text-brand-400 transition-colors">alex.silva@estudante.edu.br</div>
+                                    <div class="text-slate-200 font-semibold group-hover:text-brand-400 transition-colors">diegosuper011@gmail.com</div>
                                 </div>
                             </a>
 
@@ -591,7 +581,7 @@
                                 </div>
                                 <div>
                                     <div class="text-xs text-slate-400 font-mono">Perfil Profissional</div>
-                                    <div class="text-slate-200 font-semibold group-hover:text-brand-400 transition-colors">linkedin.com/in/alexsilva-dev</div>
+                                    <div class="text-slate-200 font-semibold group-hover:text-brand-400 transition-colors">www.linkedin.com/in/diego-soares-749a37338</div>
                                 </div>
                             </a>
 
@@ -601,7 +591,7 @@
                                 </div>
                                 <div>
                                     <div class="text-xs text-slate-400 font-mono">Repositórios</div>
-                                    <div class="text-slate-200 font-semibold group-hover:text-brand-400 transition-colors">github.com/alexsilva-dev</div>
+                                    <div class="text-slate-200 font-semibold group-hover:text-brand-400 transition-colors">https://github.com/diegosuper011-sketch</div>
                                 </div>
                             </a>
                         </div>
@@ -612,12 +602,12 @@
                         <form id="contact-form" class="space-y-6" onsubmit="handleFormSubmit(event)">
                             <div class="grid sm:grid-cols-2 gap-6">
                                 <div class="space-y-2">
-                                    <label for="name" class="block text-sm font-medium text-slate-300">Seu Nome</label>
+                                    <label for="name" class="block text-sm font-medium text-slate-300">Diego Soares Silva</label>
                                     <input type="text" id="name" required placeholder="Ex: Maria Souza" 
                                            class="w-full px-4 py-3 rounded-xl bg-dark-base border border-dark-border text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 transition-colors">
                                 </div>
                                 <div class="space-y-2">
-                                    <label for="email" class="block text-sm font-medium text-slate-300">Seu E-mail</label>
+                                    <label for="email" class="block text-sm font-medium text-slate-300">diegosuper011@gmail.com</label>
                                     <input type="email" id="email" required placeholder="Ex: maria@email.com" 
                                            class="w-full px-4 py-3 rounded-xl bg-dark-base border border-dark-border text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 transition-colors">
                                 </div>
@@ -657,7 +647,7 @@
     <footer class="border-t border-dark-border py-8 bg-dark-base">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
             <p class="text-xs text-slate-500 font-mono text-center sm:text-left">
-                © 2026 Alex Silva. Desenvolvido para Portfólio Acadêmico.
+                © 2026 Diego Soares Silva. Desenvolvido para Portfólio Acadêmico.
             </p>
 
             <a href="#" class="inline-flex items-center gap-2 text-xs font-mono text-slate-400 hover:text-brand-400 transition-colors">
@@ -706,73 +696,7 @@
         </div>
     </div>
 
-    <!-- SCRIPTS JS -->
-    <script>
-        // Inicializa Ícones Lucide
-        lucide.createIcons();
-
-        // Toggle Menu Mobile
-        const mobileBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Fechar menu mobile ao clicar em um link
-        document.querySelectorAll('.mobile-link').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-
-        // Filtros de Projetos
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const projectCards = document.querySelectorAll('.project-card');
-
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Ativar botão clicado
-                filterBtns.forEach(b => {
-                    b.classList.remove('active', 'bg-brand-500', 'text-dark-base', 'font-bold');
-                    b.classList.add('bg-dark-card', 'text-slate-300');
-                });
-                btn.classList.add('active', 'bg-brand-500', 'text-dark-base', 'font-bold');
-                btn.classList.remove('bg-dark-card', 'text-slate-300');
-
-                const filter = btn.getAttribute('data-filter');
-
-                projectCards.forEach(card => {
-                    if (filter === 'todos' || card.getAttribute('data-category').includes(filter)) {
-                        card.style.display = 'flex';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
-        });
-
-        // Modal Helpers
-        function openModal(id) {
-            document.getElementById(id).classList.remove('hidden');
-        }
-
-        function closeModal(id) {
-            document.getElementById(id).classList.add('hidden');
-        }
-
-        // Submissão do Formulário (Simulação)
-        function handleFormSubmit(e) {
-            e.preventDefault();
-            const feedback = document.getElementById('form-feedback');
-            feedback.classList.remove('hidden');
-            
-            // Limpa o formulário após 2 segundos
-            setTimeout(() => {
-                document.getElementById('contact-form').reset();
-                feedback.classList.add('hidden');
-            }, 4000);
-        }
-    </script>
+    <!-- Script JavaScript externo -->
+    <script src="script.js"></script>
 </body>
 </html>
