@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Acadêmico | Engenharia de Software</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#ecfeff',
+                            100: '#cffaff',
+                            400: '#22d3ee',
+                            500: '#06b6d4',
+                            600: '#0891b2',
+                            900: '#164e63',
+                        },
+                        dark: {
+                            base: '#090d16',
+                            card: '#0f172a',
+                            border: '#1e293b',
+                            hover: '#334155'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Efeitos e animações customizadas */
+        .glow-effect {
+            box-shadow: 0 0 25px -5px rgba(6, 182, 212, 0.25);
+        }
+        .glow-effect:hover {
+            box-shadow: 0 0 35px 0px rgba(6, 182, 212, 0.45);
+        }
+        .bg-grid-pattern {
+            background-size: 30px 30px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+    </style>
+</head>
+<body class="bg-dark-base text-slate-300 font-sans antialiased selection:bg-brand-500 selection:text-white bg-grid-pattern">
+
+    <!-- HEADER / NAVEGAÇÃO -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-dark-base/80 backdrop-blur-md border-b border-dark-border transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-2 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-brand-400 flex items-center justify-center text-dark-base font-bold font-mono text-xl shadow-lg shadow-brand-500/20 group-hover:scale-105 transition-transform">
+                    &lt;/&gt;
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-slate-100 font-bold text-lg leading-tight tracking-wide group-hover:text-brand-400 transition-colors">Alex Silva</span>
+                    <span class="text-xs font-mono text-slate-400">Eng. de Software</span>
+                </div>
+            </a>
+
+            <!-- Menu Desktop -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm">
+                <a href="#sobre" class="hover:text-brand-400 transition-colors">Sobre Mim</a>
+                <a href="#projetos" class="hover:text-brand-400 transition-colors">Projetos</a>
+                <a href="#habilidades" class="hover:text-brand-400 transition-colors">Habilidades</a>
+                <a href="#contato" class="hover:text-brand-400 transition-colors">Contato</a>
+            </nav>
+
+            <!-- Ações Direitas (GitHub + Mobile Menu Button) -->
+            <div class="flex items-center gap-4">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" 
+                   class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-dark-card border border-dark-border text-slate-200 hover:border-brand-500/50 hover:text-white transition-all text-sm font-medium">
+                    <i data-lucide="github" class="w-4 h-4 text-brand-400"></i>
+                    <span>GitHub</span>
+                </a>
+
+                <!-- Botão Menu Mobile -->
+                <button id="mobile-menu-btn" aria-label="Abrir menu" class="md:hidden p-2 rounded-lg text-slate-400 hover:text-white hover:bg-dark-card focus:outline-none">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Menu Mobile Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-card border-b border-dark-border px-4 pt-2 pb-6 space-y-3">
+            <a href="#sobre" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-brand-400 hover:bg-dark-hover">Sobre Mim</a>
+            <a href="#projetos" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-brand-400 hover:bg-dark-hover">Projetos</a>
+            <a href="#habilidades" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-brand-400 hover:bg-dark-hover">Habilidades</a>
+            <a href="#contato" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-300 hover:text-brand-400 hover:bg-dark-hover">Contato</a>
+            <a href="https://github.com" target="_blank" class="flex items-center gap-2 px-3 py-2 rounded-md text-base font-medium text-brand-400 hover:bg-dark-hover">
+                <i data-lucide="github" class="w-5 h-5"></i>
+                <span>Ver GitHub</span>
+            </a>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <!-- HERO SECTION -->
+        <section class="min-h-[calc(100vh-5rem)] flex items-center justify-center relative py-12 px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto text-center space-y-8 z-10">
+                
+                <!-- Badge Status -->
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-xs sm:text-sm font-mono font-medium">
+                    <span class="w-2 h-2 rounded-full bg-brand-400 animate-pulse"></span>
+                    Estudante de Bacharelado em Engenharia de Software
+                </div>
+
+                <!-- Headline -->
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight leading-tight">
+                    Construindo software escalável, <span class="bg-gradient-to-r from-brand-400 via-teal-300 to-cyan-500 bg-clip-text text-transparent">moderno e eficiente.</span>
+                </h1>
+
+                <!-- Subtitle -->
+                <p class="text-slate-400 text-lg sm:text-xl max-w-2xl mx-auto font-light leading-relaxed">
+                    Transformando teoria acadêmica em soluções reais através de desenvolvimento Full Stack, engenharia de requisitos e arquitetura de sistemas.
+                </p>
+
+                <!-- Call to Action Buttons -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+                    <a href="#projetos" 
+                       class="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-brand-500 to-brand-600 text-slate-950 font-bold hover:brightness-110 transition-all shadow-lg shadow-brand-500/25 flex items-center justify-center gap-2 group">
+                        <span>Explorar Projetos</span>
+                        <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+
+                    <button onclick="openModal('cv-modal')" 
+                       class="w-full sm:w-auto px-8 py-4 rounded-xl bg-dark-card border border-dark-border text-slate-200 font-semibold hover:border-slate-600 hover:text-white transition-all flex items-center justify-center gap-2">
+                        <i data-lucide="file-text" class="w-5 h-5 text-brand-400"></i>
+                        <span>Visualizar Currículo</span>
+                    </button>
+                </div>
+
+                <!-- Stats / Quick Info -->
+                <div class="pt-12 grid grid-cols-2 md:grid-cols-3 gap-6 max-w-2xl mx-auto border-t border-dark-border/60">
+                    <div>
+                        <div class="text-2xl sm:text-3xl font-extrabold text-white font-mono">6º Semestre</div>
+                        <div class="text-xs sm:text-sm text-slate-400">Graduação Acadêmica</div>
+                    </div>
+                    <div>
+                        <div class="text-2xl sm:text-3xl font-extrabold text-brand-400 font-mono">15+</div>
+                        <div class="text-xs sm:text-sm text-slate-400">Projetos Desenvolvidos</div>
+                    </div>
+                    <div class="col-span-2 md:col-span-1">
+                        <div class="text-2xl sm:text-3xl font-extrabold text-white font-mono">100%</div>
+                        <div class="text-xs sm:text-sm text-slate-400">Dedicação & Prática</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SOBRE MIM -->
+        <section id="sobre" class="py-20 border-t border-dark-border bg-dark-base/50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Coluna da Foto/Card Visual -->
+                    <div class="lg:col-span-5 flex justify-center">
+                        <div class="relative group w-full max-w-md">
+                            <!-- Glow background -->
+                            <div class="absolute -inset-1 bg-gradient-to-r from-brand-500 to-teal-500 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                            
+                            <div class="relative bg-dark-card border border-dark-border rounded-2xl p-6 space-y-6">
+                                <div class="w-32 h-32 mx-auto rounded-full bg-slate-800 overflow-hidden border-2 border-brand-500/40 p-1">
+                                    <img src="https://placehold.co/300x300/0f172a/22d3ee?text=Alex+Silva" 
+                                         alt="Alex Silva" 
+                                         class="w-full h-full rounded-full object-cover"
+                                         onerror="this.src='https://placehold.co/300x300/0f172a/ffffff?text=Estudante'">
+                                </div>
+                                <div class="text-center space-y-1">
+                                    <h3 class="text-xl font-bold text-white">Alex Silva</h3>
+                                    <p class="text-sm text-brand-400 font-mono">Engenharia de Software (Bacharelado)</p>
+                                </div>
+                                
+                                <div class="space-y-3 pt-4 border-t border-dark-border text-sm">
+                                    <div class="flex justify-between text-slate-400">
+                                        <span>Universidade:</span>
+                                        <span class="text-slate-200 font-medium">FIAP / Univesp</span>
+                                    </div>
+                                    <div class="flex justify-between text-slate-400">
+                                        <span>Previsão de Formatura:</span>
+                                        <span class="text-slate-200 font-medium">Dez/2026</span>
+                                    </div>
+                                    <div class="flex justify-between text-slate-400">
+                                        <span>Localização:</span>
+                                        <span class="text-slate-200 font-medium">São Paulo, SP</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Coluna de Texto -->
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="inline-flex items-center gap-2 text-brand-400 font-mono text-sm font-semibold tracking-wider uppercase">
+                            <i data-lucide="user" class="w-4 h-4"></i>
+                            <span>Sobre Mim</span>
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-bold text-white">
+                            Desenvolvendo soluções sólidas através da ciência da computação e boas práticas.
+                        </h2>
+                        <p class="text-slate-400 leading-relaxed">
+                            Atualmente cursando o ensino superior em Engenharia de Software, busco aplicar metodologias ágeis, conceitos de Clean Code e arquitetura orientada a serviços no desenvolvimento de sistemas web eficientes.
+                        </p>
+                        <p class="text-slate-400 leading-relaxed">
+                            Tenho forte inclinação para resolução de problemas complexos, aprendizado autodidata de novas linguagens e colaboração em equipe. Além da grade acadêmica, dedico meu tempo à construção de projetos autorais e contribuição em comunidades open-source.
+                        </p>
+
+                        <!-- Highlights Destaques -->
+                        <div class="grid sm:grid-cols-2 gap-4 pt-4">
+                            <div class="p-4 rounded-xl bg-dark-card border border-dark-border flex items-start gap-3">
+                                <div class="p-2.5 rounded-lg bg-brand-500/10 text-brand-400">
+                                    <i data-lucide="code-2" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-semibold text-sm">Código Limpo</h4>
+                                    <p class="text-slate-400 text-xs mt-1">Foco em legibilidade, manutenibilidade e padrões da indústria.</p>
+                                </div>
+                            </div>
+
+                            <div class="p-4 rounded-xl bg-dark-card border border-dark-border flex items-start gap-3">
+                                <div class="p-2.5 rounded-lg bg-brand-500/10 text-brand-400">
+                                    <i data-lucide="layers" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-semibold text-sm">Modelagem de Dados</h4>
+                                    <p class="text-slate-400 text-xs mt-1">Criação de bancos relacionais e REST APIs robustas.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJETOS -->
+        <section id="projetos" class="py-20 border-t border-dark-border">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+                
+                <!-- Cabeçalho da Seção -->
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                    <div>
+                        <div class="inline-flex items-center gap-2 text-brand-400 font-mono text-sm font-semibold tracking-wider uppercase">
+                            <i data-lucide="folder-git-2" class="w-4 h-4"></i>
+                            <span>Portfólio de Projetos</span>
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-bold text-white mt-2">
+                            Trabalhos Acadêmicos & Pessoais
+                        </h2>
+                    </div>
+
+                    <!-- Filtros -->
+                    <div class="flex flex-wrap gap-2 font-mono text-xs" id="filter-container">
+                        <button class="filter-btn active px-4 py-2 rounded-lg bg-brand-500 text-dark-base font-bold transition-all" data-filter="todos">Todos</button>
+                        <button class="filter-btn px-4 py-2 rounded-lg bg-dark-card border border-dark-border text-slate-300 hover:text-white transition-all" data-filter="web">Web App</button>
+                        <button class="filter-btn px-4 py-2 rounded-lg bg-dark-card border border-dark-border text-slate-300 hover:text-white transition-all" data-filter="backend">Backend / API</button>
+                        <button class="filter-btn px-4 py-2 rounded-lg bg-dark-card border border-dark-border text-slate-300 hover:text-white transition-all" data-filter="academico">Faculdade</button>
+                    </div>
+                </div>
+
+                <!-- Grid de Cards de Projetos -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="projects-grid">
+                    
+                    <!-- Card 1 -->
+                    <article class="project-card group bg-dark-card border border-dark-border rounded-2xl overflow-hidden hover:border-brand-500/50 transition-all duration-300 flex flex-col glow-effect" data-category="web academico">
+                        <div class="h-48 overflow-hidden bg-slate-900 relative">
+                            <img src="https://placehold.co/600x400/0f172a/22d3ee?text=Gestao+Academica+UI" 
+                                 alt="Sistema de Gestão Acadêmica" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-dark-base/80 backdrop-blur-md border border-dark-border text-xs font-mono text-brand-400">
+                                Trabalho de Conclusão (PI)
+                            </div>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                            <div class="space-y-2">
+                                <h3 class="text-xl font-bold text-white group-hover:text-brand-400 transition-colors">Sistema de Gestão de Alunos</h3>
+                                <p class="text-slate-400 text-sm leading-relaxed">
+                                    Plataforma completa para controle de notas, frequência e turmas. Desenvolvida como Projeto Integrador na faculdade.
+                                </p>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="flex flex-wrap gap-2 font-mono text-xs">
+                                    <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300">JavaScript</span>
+                                    <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300">Node.js</span>
+                                    <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300">Tailwind</span>
+                                    <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300">PostgreSQL</span>
+                                </div>
+                                <div class="flex items-center gap-4 pt-2 border-t border-dark-border text-sm font-medium">
+                                    <a href="https://github.com" target="_blank" class="flex items-center gap-1.5 text-slate-300 hover:text-brand-400 transition-colors">
+                                        <i data-lucide="github" class="w-4 h-4"></i> Código
+                                    </a>
+                                    <a href="#" onclick="alert('Visualização demo indisponível em modo offline.')" class="flex items-center gap-1.5 text-slate-300 hover:text-brand-400 transition-colors">
+                                        <i data-lucide="external-link" class="w-4 h-4"></i> Demo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="project-card group bg-dark-card border border-dark-border rounded-2xl overflow-hidden hover:border-brand-500/50 transition-all duration-300 flex flex-col glow-effect" data-category="backend">
+                        <div class="h-48 overflow-hidden bg-slate-900 relative">
+                            <img src="https://placehold.co/600x400/0f172a/22d3ee?text=API+REST+Microservicos" 
+                                 alt="API RESTful de E-commerce" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-dark-base/80 backdrop-blur-md border border-dark-border text-xs font-mono text-brand-400">
+                                Projeto Pessoal
+                            </div>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                            <div class="space-y-2">
+                                <h3 class="text-xl font-bold text-white group-hover:text-brand-400 transition-colors">API RESTful para E-Commerce</h3>
+                                <p class="text-slate-400 text-sm leading-relaxed">
+                                    Arquitetura de microsserviços com autenticação JWT, pagamentos simulados e documentação OpenAPI/Swagger.
+                                </p>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="flex flex-wrap gap-2 font-mono text-xs">
+                                    <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300">Java</span>
+                                    <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300">Spring Boot</span>
+                                    <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300">Docker</span>
+                                    <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300">Swagger</span>
+                                </div>
+                                <div class="flex items-center gap-4 pt-2 border-t border-dark-border text-sm font-medium">
+                                    <a href="https://github.com" target="_blank" class="flex items-center gap-1.5 text-slate-300 hover:text-brand-400 transition-colors">
+                                        <i data-lucide="github" class="w-4 h-4"></i> Repositório
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article class="project-card group bg-dark-card border border-dark-border rounded-2xl overflow-hidden hover:border-brand-500/50 transition-all duration-300 flex flex-col glow-effect" data-category="web backend">
+                        <div class="h-48 overflow-hidden bg-slate-900 relative">
+                            <img src="https://placehold.co/600x400/0f172a/22d3ee?text=Task+Manager+App" 
+                                 alt="Kanban Task Manager" 
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute top-3 right-3 px-2.5 py-1 rounded-md bg-dark-base/80 backdrop-blur-md border border-dark-border text-xs font-mono text-brand-400">
+                                Full Stack
+                            </div>
+                        </div>
+                        <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                            <div class="space-y-2">
+                                <h3 class="text-xl font-bold text-white group-hover:text-brand-400 transition-colors">Kanban Task Manager</h3>
+                                <p class="text-slate-400 text-sm leading-relaxed">
+                                    Aplicação estilo Trello para produtividade acadêmica com suporte a drag-and-drop e sincronização em tempo real.
+                                </p>
+                            </div>
+                            <div class="space-y-4">
+                                <div class="flex flex-wrap gap-2 font-mono text-xs">
+                                    <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300">React</span>
+                                    <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300">TypeScript</span>
+                                    <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300">Firebase</span>
+                                    <span class="px-2.5 py-1 rounded-md bg-slate-800 text-slate-300">Tailwind</span>
+                                </div>
+                                <div class="flex items-center gap-4 pt-2 border-t border-dark-border text-sm font-medium">
+                                    <a href="https://github.com" target="_blank" class="flex items-center gap-1.5 text-slate-300 hover:text-brand-400 transition-colors">
+                                        <i data-lucide="github" class="w-4 h-4"></i> Código
+                                    </a>
+                                    <a href="#" onclick="alert('Visualização demo indisponível em modo offline.')" class="flex items-center gap-1.5 text-slate-300 hover:text-brand-400 transition-colors">
+                                        <i data-lucide="external-link" class="w-4 h-4"></i> Demo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- HABILIDADES (SKILLS) -->
+        <section id="habilidades" class="py-20 border-t border-dark-border bg-dark-base/50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+                
+                <div class="text-center max-w-2xl mx-auto space-y-3">
+                    <div class="inline-flex items-center gap-2 text-brand-400 font-mono text-sm font-semibold tracking-wider uppercase">
+                        <i data-lucide="cpu" class="w-4 h-4"></i>
+                        <span>Stack Tecnológica</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-white">
+                        Linguagens, Frameworks & Ferramentas
+                    </h2>
+                    <p class="text-slate-400 text-sm">
+                        Conhecimentos adquiridos em disciplinas da faculdade e aperfeiçoados em projetos práticos.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    
+                    <!-- Categoria 1: Linguagens -->
+                    <div class="bg-dark-card border border-dark-border rounded-2xl p-6 space-y-6">
+                        <div class="flex items-center gap-3">
+                            <div class="p-3 rounded-xl bg-brand-500/10 text-brand-400">
+                                <i data-lucide="code" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">Linguagens</h3>
+                        </div>
+
+                        <ul class="space-y-4">
+                            <li class="space-y-2">
+                                <div class="flex justify-between text-sm font-medium">
+                                    <span class="text-slate-200">JavaScript / TypeScript</span>
+                                    <span class="text-brand-400 font-mono">Avançado</span>
+                                </div>
+                                <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                    <div class="bg-brand-400 h-full w-4/5 rounded-full"></div>
+                                </div>
+                            </li>
+                            <li class="space-y-2">
+                                <div class="flex justify-between text-sm font-medium">
+                                    <span class="text-slate-200">Java</span>
+                                    <span class="text-brand-400 font-mono">Intermediário</span>
+                                </div>
+                                <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                    <div class="bg-brand-400 h-full w-3/5 rounded-full"></div>
+                                </div>
+                            </li>
+                            <li class="space-y-2">
+                                <div class="flex justify-between text-sm font-medium">
+                                    <span class="text-slate-200">Python</span>
+                                    <span class="text-brand-400 font-mono">Intermediário</span>
+                                </div>
+                                <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                    <div class="bg-brand-400 h-full w-3/5 rounded-full"></div>
+                                </div>
+                            </li>
+                            <li class="space-y-2">
+                                <div class="flex justify-between text-sm font-medium">
+                                    <span class="text-slate-200">SQL (PostgreSQL, MySQL)</span>
+                                    <span class="text-brand-400 font-mono">Intermediário</span>
+                                </div>
+                                <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                    <div class="bg-brand-400 h-full w-3/4 rounded-full"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Categoria 2: Web & Frameworks -->
+                    <div class="bg-dark-card border border-dark-border rounded-2xl p-6 space-y-6">
+                        <div class="flex items-center gap-3">
+                            <div class="p-3 rounded-xl bg-brand-500/10 text-brand-400">
+                                <i data-lucide="layout" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">Web & Frameworks</h3>
+                        </div>
+
+                        <ul class="space-y-4">
+                            <li class="space-y-2">
+                                <div class="flex justify-between text-sm font-medium">
+                                    <span class="text-slate-200">React.js / Next.js</span>
+                                    <span class="text-brand-400 font-mono">Intermediário</span>
+                                </div>
+                                <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                    <div class="bg-brand-400 h-full w-3/4 rounded-full"></div>
+                                </div>
+                            </li>
+                            <li class="space-y-2">
+                                <div class="flex justify-between text-sm font-medium">
+                                    <span class="text-slate-200">Node.js (Express)</span>
+                                    <span class="text-brand-400 font-mono">Intermediário</span>
+                                </div>
+                                <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                    <div class="bg-brand-400 h-full w-2/3 rounded-full"></div>
+                                </div>
+                            </li>
+                            <li class="space-y-2">
+                                <div class="flex justify-between text-sm font-medium">
+                                    <span class="text-slate-200">Tailwind CSS / HTML5</span>
+                                    <span class="text-brand-400 font-mono">Avançado</span>
+                                </div>
+                                <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                    <div class="bg-brand-400 h-full w-4/5 rounded-full"></div>
+                                </div>
+                            </li>
+                            <li class="space-y-2">
+                                <div class="flex justify-between text-sm font-medium">
+                                    <span class="text-slate-200">Spring Boot (Java)</span>
+                                    <span class="text-brand-400 font-mono">Básico</span>
+                                </div>
+                                <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                    <div class="bg-brand-400 h-full w-1/2 rounded-full"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Categoria 3: Ferramentas & Engenharia -->
+                    <div class="bg-dark-card border border-dark-border rounded-2xl p-6 space-y-6">
+                        <div class="flex items-center gap-3">
+                            <div class="p-3 rounded-xl bg-brand-500/10 text-brand-400">
+                                <i data-lucide="wrench" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">Ferramentas & DevOps</h3>
+                        </div>
+
+                        <ul class="space-y-4">
+                            <li class="space-y-2">
+                                <div class="flex justify-between text-sm font-medium">
+                                    <span class="text-slate-200">Git & GitHub</span>
+                                    <span class="text-brand-400 font-mono">Avançado</span>
+                                </div>
+                                <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                    <div class="bg-brand-400 h-full w-4/5 rounded-full"></div>
+                                </div>
+                            </li>
+                            <li class="space-y-2">
+                                <div class="flex justify-between text-sm font-medium">
+                                    <span class="text-slate-200">Docker (Contêineres)</span>
+                                    <span class="text-brand-400 font-mono">Básico</span>
+                                </div>
+                                <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                    <div class="bg-brand-400 h-full w-2/5 rounded-full"></div>
+                                </div>
+                            </li>
+                            <li class="space-y-2">
+                                <div class="flex justify-between text-sm font-medium">
+                                    <span class="text-slate-200">Metodologias Ágeis (Scrum/Kanban)</span>
+                                    <span class="text-brand-400 font-mono">Intermediário</span>
+                                </div>
+                                <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                    <div class="bg-brand-400 h-full w-3/4 rounded-full"></div>
+                                </div>
+                            </li>
+                            <li class="space-y-2">
+                                <div class="flex justify-between text-sm font-medium">
+                                    <span class="text-slate-200">Figma / UI Design</span>
+                                    <span class="text-brand-400 font-mono">Intermediário</span>
+                                </div>
+                                <div class="w-full bg-slate-800 h-2 rounded-full overflow-hidden">
+                                    <div class="bg-brand-400 h-full w-3/5 rounded-full"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTATO -->
+        <section id="contato" class="py-20 border-t border-dark-border">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-12 gap-12">
+                    
+                    <!-- Informações de Contato -->
+                    <div class="lg:col-span-5 space-y-8">
+                        <div class="space-y-3">
+                            <div class="inline-flex items-center gap-2 text-brand-400 font-mono text-sm font-semibold tracking-wider uppercase">
+                                <i data-lucide="mail" class="w-4 h-4"></i>
+                                <span>Contato & Redes</span>
+                            </div>
+                            <h2 class="text-3xl sm:text-4xl font-bold text-white">Vamos conversar ou colaborar?</h2>
+                            <p class="text-slate-400 leading-relaxed">
+                                Estou em busca de oportunidades de estágio ou projetos acadêmicos e freelancers. Sinta-se à vontade para enviar uma mensagem!
+                            </p>
+                        </div>
+
+                        <div class="space-y-4">
+                            <a href="mailto:alex.silva@exemplo.com" class="flex items-center gap-4 p-4 rounded-xl bg-dark-card border border-dark-border hover:border-brand-500/50 transition-all group">
+                                <div class="p-3 rounded-lg bg-slate-800 group-hover:bg-brand-500/10 group-hover:text-brand-400 text-slate-300 transition-colors">
+                                    <i data-lucide="mail" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-slate-400 font-mono">E-mail Direto</div>
+                                    <div class="text-slate-200 font-semibold group-hover:text-brand-400 transition-colors">alex.silva@estudante.edu.br</div>
+                                </div>
+                            </a>
+
+                            <a href="https://linkedin.com" target="_blank" class="flex items-center gap-4 p-4 rounded-xl bg-dark-card border border-dark-border hover:border-brand-500/50 transition-all group">
+                                <div class="p-3 rounded-lg bg-slate-800 group-hover:bg-brand-500/10 group-hover:text-brand-400 text-slate-300 transition-colors">
+                                    <i data-lucide="linkedin" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-slate-400 font-mono">Perfil Profissional</div>
+                                    <div class="text-slate-200 font-semibold group-hover:text-brand-400 transition-colors">linkedin.com/in/alexsilva-dev</div>
+                                </div>
+                            </a>
+
+                            <a href="https://github.com" target="_blank" class="flex items-center gap-4 p-4 rounded-xl bg-dark-card border border-dark-border hover:border-brand-500/50 transition-all group">
+                                <div class="p-3 rounded-lg bg-slate-800 group-hover:bg-brand-500/10 group-hover:text-brand-400 text-slate-300 transition-colors">
+                                    <i data-lucide="github" class="w-6 h-6"></i>
+                                </div>
+                                <div>
+                                    <div class="text-xs text-slate-400 font-mono">Repositórios</div>
+                                    <div class="text-slate-200 font-semibold group-hover:text-brand-400 transition-colors">github.com/alexsilva-dev</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Formulário -->
+                    <div class="lg:col-span-7 bg-dark-card border border-dark-border rounded-2xl p-6 sm:p-8">
+                        <form id="contact-form" class="space-y-6" onsubmit="handleFormSubmit(event)">
+                            <div class="grid sm:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label for="name" class="block text-sm font-medium text-slate-300">Seu Nome</label>
+                                    <input type="text" id="name" required placeholder="Ex: Maria Souza" 
+                                           class="w-full px-4 py-3 rounded-xl bg-dark-base border border-dark-border text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 transition-colors">
+                                </div>
+                                <div class="space-y-2">
+                                    <label for="email" class="block text-sm font-medium text-slate-300">Seu E-mail</label>
+                                    <input type="email" id="email" required placeholder="Ex: maria@email.com" 
+                                           class="w-full px-4 py-3 rounded-xl bg-dark-base border border-dark-border text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 transition-colors">
+                                </div>
+                            </div>
+
+                            <div class="space-y-2">
+                                <label for="subject" class="block text-sm font-medium text-slate-300">Assunto</label>
+                                <input type="text" id="subject" required placeholder="Ex: Oportunidade de Estágio / Projeto Integrador" 
+                                       class="w-full px-4 py-3 rounded-xl bg-dark-base border border-dark-border text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 transition-colors">
+                            </div>
+
+                            <div class="space-y-2">
+                                <label for="message" class="block text-sm font-medium text-slate-300">Mensagem</label>
+                                <textarea id="message" rows="5" required placeholder="Escreva sua mensagem aqui..." 
+                                          class="w-full px-4 py-3 rounded-xl bg-dark-base border border-dark-border text-white placeholder-slate-500 focus:outline-none focus:border-brand-500 transition-colors"></textarea>
+                            </div>
+
+                            <button type="submit" 
+                                    class="w-full py-4 rounded-xl bg-brand-500 text-dark-base font-bold hover:bg-brand-400 transition-all shadow-lg shadow-brand-500/20 flex items-center justify-center gap-2">
+                                <i data-lucide="send" class="w-5 h-5"></i>
+                                <span>Enviar Mensagem</span>
+                            </button>
+
+                            <!-- Mensagem de Sucesso (Oculta por padrão) -->
+                            <div id="form-feedback" class="hidden p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-sm font-medium text-center">
+                                Mensagem enviada com sucesso! Em breve entrarei em contato.
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-dark-border py-8 bg-dark-base">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p class="text-xs text-slate-500 font-mono text-center sm:text-left">
+                © 2026 Alex Silva. Desenvolvido para Portfólio Acadêmico.
+            </p>
+
+            <a href="#" class="inline-flex items-center gap-2 text-xs font-mono text-slate-400 hover:text-brand-400 transition-colors">
+                <span>Voltar ao topo</span>
+                <i data-lucide="arrow-up" class="w-4 h-4"></i>
+            </a>
+        </div>
+    </footer>
+
+    <!-- MODAL CURRÍCULO (CV) -->
+    <div id="cv-modal" class="fixed inset-0 z-50 hidden bg-dark-base/80 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-dark-card border border-dark-border rounded-2xl max-w-lg w-full p-6 space-y-6 relative shadow-2xl">
+            
+            <button onclick="closeModal('cv-modal')" class="absolute top-4 right-4 text-slate-400 hover:text-white p-2">
+                <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+
+            <div class="space-y-2">
+                <h3 class="text-2xl font-bold text-white flex items-center gap-2">
+                    <i data-lucide="file-badge" class="w-6 h-6 text-brand-400"></i>
+                    <span>Currículo Acadêmico</span>
+                </h3>
+                <p class="text-slate-400 text-sm">Escolha como deseja visualizar minhas qualificações acadêmicas e técnicas.</p>
+            </div>
+
+            <div class="space-y-3 font-mono text-sm">
+                <div class="p-3 rounded-lg bg-slate-900 border border-dark-border">
+                    <span class="text-slate-400">Formato:</span> PDF (Atualizado em 2026)
+                </div>
+                <div class="p-3 rounded-lg bg-slate-900 border border-dark-border">
+                    <span class="text-slate-400">Foco:</span> Estágio / Júnior em Engenharia de Software
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-3 pt-2">
+                <button onclick="alert('Download do PDF simulado com sucesso!')" 
+                        class="flex-1 py-3 rounded-xl bg-brand-500 text-dark-base font-bold hover:bg-brand-400 transition-all flex items-center justify-center gap-2">
+                    <i data-lucide="download" class="w-4 h-4"></i>
+                    <span>Baixar PDF</span>
+                </button>
+                <button onclick="closeModal('cv-modal')" 
+                        class="flex-1 py-3 rounded-xl bg-slate-800 text-slate-300 font-medium hover:bg-slate-700 transition-all">
+                    Fechar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPTS JS -->
+    <script>
+        // Inicializa Ícones Lucide
+        lucide.createIcons();
+
+        // Toggle Menu Mobile
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Fechar menu mobile ao clicar em um link
+        document.querySelectorAll('.mobile-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Filtros de Projetos
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Ativar botão clicado
+                filterBtns.forEach(b => {
+                    b.classList.remove('active', 'bg-brand-500', 'text-dark-base', 'font-bold');
+                    b.classList.add('bg-dark-card', 'text-slate-300');
+                });
+                btn.classList.add('active', 'bg-brand-500', 'text-dark-base', 'font-bold');
+                btn.classList.remove('bg-dark-card', 'text-slate-300');
+
+                const filter = btn.getAttribute('data-filter');
+
+                projectCards.forEach(card => {
+                    if (filter === 'todos' || card.getAttribute('data-category').includes(filter)) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Modal Helpers
+        function openModal(id) {
+            document.getElementById(id).classList.remove('hidden');
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.add('hidden');
+        }
+
+        // Submissão do Formulário (Simulação)
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const feedback = document.getElementById('form-feedback');
+            feedback.classList.remove('hidden');
+            
+            // Limpa o formulário após 2 segundos
+            setTimeout(() => {
+                document.getElementById('contact-form').reset();
+                feedback.classList.add('hidden');
+            }, 4000);
+        }
+    </script>
+</body>
+</html>
